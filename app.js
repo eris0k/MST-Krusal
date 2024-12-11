@@ -267,9 +267,6 @@ let goalCost = 35;
 // initialize the build cost;
 let buildCost = 0;
 
-// initialize the selected nodes
-const selectedNodes = new Set();
-
 // get the dom elements of the buttons
 const button1 = document.getElementById("button1");
 const button2 = document.getElementById("button2");
@@ -284,6 +281,9 @@ function renderProblem(problem){
 
     // initialize unionFind
     const unionFind = new UnionFind(problem.nodes.length);
+
+    // initialize the selected nodes
+    const selectedNodes = new Set();
 
     // render edges
     problem.edges.forEach( edge => {
